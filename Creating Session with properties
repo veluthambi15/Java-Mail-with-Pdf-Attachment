@@ -1,0 +1,7 @@
+Properties properties = System.getProperties();
+		properties.setProperty("mail.smtp.host", "mail.javatpoint.com");
+		properties.put("mail.smtp.auth", "true");
+
+		Session session = Session.getDefaultInstance(properties, new javax.mail.Authenticator() {
+			protected PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication(user, password);
